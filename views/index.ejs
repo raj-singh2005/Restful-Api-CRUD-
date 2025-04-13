@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all posts </title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+    <div class="navbar">
+       <h1 id="heading">Dev-Stack</h1>
+       <a href="http://localhost:8080/posts/new" id="newopt">Create New Post</a>
+    </div>
+    <div class="posts">
+   <% for(post of posts){ %>
+  
+     <div class="post">
+        <h2 id="username"><span id="span"> "</span>@<%= post.username  %> <span id="detail-link"></h2> 
+            <a href="http://localhost:8080/posts/<%=post.id%>" id="post-details">Details !</a></span>
+            <a href="http://localhost:8080/posts/<%=post.id%>/edit" id="post-details">Edit !</a></span>
+            
+        <h3 id="content"><%= post.content %></h3>
+        <form method="post" action="/posts/<%=post.id%>?_method=DELETE">
+            <button class="delete">Delete Post</button>
+        </form>
+      
+     </div>
+     
+
+    <% } %>
+</div>
+</body>
+</html>
+
